@@ -5,7 +5,7 @@ const Extras = () => {
         <h1 className="text-2xl font-bold">
           Discover the Ultimate Gadget Store!
         </h1>
-        <p className="text-gray-500 mt-6">
+        <p className="text-gray-500 text-sm mt-6">
           Welcome to your one-stop shop for all things tech! Whether you&apos;re
           searching for the latest smartphones, powerful laptops, smart home
           devices, or essential accessories, we&apos;ve got it all. Our
