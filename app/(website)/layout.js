@@ -5,6 +5,7 @@ import Navbar from "../../components/Navbar";
 import { AppProvider } from "@/Context";
 import ToasterProvider from "@/utils/ToasterProvider";
 import Footer from "@/components/Footer";
+import MobileNav from "@/components/MobileNav";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -29,13 +30,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${syne.className}  antialiased`}>
+      <body className={`${syne.className} mb-[77px]  antialiased`}>
         <AppProvider>
           <ToasterProvider />
           <Header />
           <Navbar />
           <div className="bg-gray-100">{children}</div>
           <Footer />
+          <MobileNav />
         </AppProvider>
       </body>
     </html>
