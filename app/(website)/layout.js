@@ -30,7 +30,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${syne.className} mb-[77px]  antialiased`}>
+      <body className={`${syne.className} mb-[77px] lg:mb-0 antialiased`}>
         <AppProvider>
           <ToasterProvider />
           <Header />

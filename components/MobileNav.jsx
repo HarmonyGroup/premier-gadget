@@ -16,8 +16,8 @@ const MobileNav = () => {
       <div className="grid grid-cols-4 text-gray-500">
         <Link
           href={"/"}
-          className={`col-span-1 flex flex-col items-center gap-1 text-[13px] font-medium ${
-            path === "/" ? "text-deepBlue" : ""
+          className={`col-span-1 flex flex-col items-center gap-1.5 text-[12px] font-medium ${
+            path === "/" ? "text-deepBlue font-semibold" : ""
           }`}
         >
           <RxDashboard size={18} />
@@ -25,26 +25,26 @@ const MobileNav = () => {
         </Link>
         <Link
           href={"/"}
-          className={`col-span-1 flex flex-col items-center gap-1 text-[13px] font-medium ${
-            path.includes("cart") ? "text-deepBlue" : ""
+          className={`col-span-1 flex flex-col items-center gap-1.5 text-[12px] font-medium ${
+            path.includes("cart") ? "text-deepBlue font-semibold" : ""
           }`}
         >
           <PiShoppingCartSimpleBold size={17} />
           Cart
         </Link>
         <Link
-          href={"/"}
-          className={`col-span-1 flex flex-col items-center gap-1 text-[13px] font-medium ${
-            path.includes("account") ? "text-deepBlue" : ""
+          href={"/account"}
+          className={`col-span-1 flex flex-col items-center gap-1.5 text-[12px] font-medium ${
+            path.includes("account") ? "text-deepBlue font-semibold" : ""
           }`}
         >
           <GoPerson size={18} />
           Account
         </Link>
         <Link
-          href={"/"}
-          className={`col-span-1 flex flex-col items-center gap-1 text-[13px] font-medium ${
-            path.includes("outlets") ? "text-deepBlue" : ""
+          href={"/contacts"}
+          className={`col-span-1 flex flex-col items-center gap-1.5 text-[12px] font-medium ${
+            path.includes("contacts") ? "text-deepBlue font-semibold" : ""
           }`}
         >
           <RiStore2Line size={18} />
