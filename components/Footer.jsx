@@ -31,7 +31,7 @@ const Footer = () => {
             <h1 className="text-lg font-bold whitespace-nowrap">Quick Links</h1>
             <div className="flex flex-col gap-4 text-gray-500 text-sm mt-8">
               <Link href={"/"}>Home</Link>
-              <Link href={"/"}>About</Link>
+              {/* <Link href={"/"}>About</Link> */}
               <Link href={"/"}>Contacts</Link>
               <Link href={"/"}>Outlets</Link>
               <Link href={"/"}>Support</Link>
@@ -45,9 +45,9 @@ const Footer = () => {
               <Link href={"/"} className="whitespace-nowrap">
                 Delivery & Returns
               </Link>
-              <Link href={"/"} className="whitespace-nowrap">
+              {/* <Link href={"/"} className="whitespace-nowrap">
                 Privacy Policy
-              </Link>
+              </Link> */}
               <Link href={"/"} className="whitespace-nowrap">
                 Terms & Conditions
               </Link>
@@ -58,7 +58,7 @@ const Footer = () => {
       <hr className="mt-6" />
       <div className="flex flex-col lg:flex-row gap-4 items-center justify-between py-6">
         <p className="text-gray-500 text-sm">
-          <span className="text-black font-semibold">Premier Gadgets</span>{" "}
+          <span className="text-black font-semibold">Premier Gadgets NG</span>{" "}
           Copyright © 2024
         </p>
         <Image src={Payments} className="scale-75" alt="Payment options" />

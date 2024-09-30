@@ -14,7 +14,7 @@ const AuthModal = () => {
         setAuthModal(false);
         setType("sign-in");
       }}
-      className="fixed inset-0 bg-black/90 flex items-center justify-center z-[999] px-6"
+      className="fixed inset-0 bg-black/90 flex items-center justify-center z-[9999999] px-6"
     >
       <div
         onClick={(e) => e.stopPropagation()}

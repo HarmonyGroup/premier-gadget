@@ -14,7 +14,7 @@ const CategorySidebarItem = ({ category }) => {
         <div className="flex items-center justify-between">
           <Link
             href={`/category/${categoryName}`}
-            className="text-[16px] font-medium outline-none"
+            className="text-sm md:text-[16px] font-medium outline-none"
           >
             {category.name}
           </Link>
@@ -26,7 +26,7 @@ const CategorySidebarItem = ({ category }) => {
           </button>
         </div>
         {showCategories && (
-          <div className="flex flex-col gap-6 mt-6">
+          <div className="flex flex-col gap-8 mt-8">
             {category.children.map((child) => (
               <CategorySidebarItem key={child._id} category={child} />
             ))}
@@ -39,7 +39,7 @@ const CategorySidebarItem = ({ category }) => {
       <Link
         href={`/category/${categoryName}`}
         key={category._id}
-        className="text-[16px] font-medium outline-none"
+        className="text-sm md:text-[16px] font-medium outline-none"
       >
         {category.name}
       </Link>

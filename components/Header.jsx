@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Image from "next/image";
 import Logo from "@/assets/premier-gadgets-logo.png";
 import { BiSupport } from "react-icons/bi";
@@ -12,20 +12,39 @@ import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { AuthModalContext } from "@/Context";
 import AuthModal from "./AuthModal";
+import CategoriesSidebar from "./CategoriesSidebar";
 
 const Header = () => {
   const { data: session, status, update } = useSession();
   const { authModal, setAuthModal, toggleAuthModal, authModalAnimation } =
     useContext(AuthModalContext);
+  const [categories, setCategories] = useState([]);
+  const [showCategories, setShowCategories] = useState(false);
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      const response = await fetch("/api/parent-categories");
+      const data = await response.json();
+      setCategories(data);
+    };
+
+    fetchCategories();
+  }, []);
 
   return (
     <>
       <div className="flex items-center justify-between gap-10 px-4 py-4 md:px-10">
-        <button className="block lg:hidden text-deepBlue">
+        <button onClick={() => setShowCategories(!showCategories)} className="block lg:hidden text-deepBlue">
           <IoMenu size={24} />
         </button>
         <Link href={"/"}>
-          <Image src={Logo} height={130} width={130} className="scale-100 md:scale-125" alt="premier-gadgets" />
+          <Image
+            src={Logo}
+            height={130}
+            width={130}
+            className="scale-100 md:scale-125"
+            alt="premier-gadgets"
+          />
         </Link>
         <form className="w-full relative hidden lg:block">
           <input
@@ -78,6 +97,11 @@ const Header = () => {
           </button>
         )}
       </div>
+      <CategoriesSidebar
+        categories={categories}
+        showCategories={showCategories}
+        setShowCategories={setShowCategories}
+      />
       {authModal && <AuthModal />}
     </>
   );
