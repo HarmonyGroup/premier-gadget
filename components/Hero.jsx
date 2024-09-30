@@ -16,7 +16,7 @@ const Hero = () => {
             Exciting Gadget <br className="block lg:hidden" /> Deals
           </h1>
           <p className="text-white text-sm text-center font-light mt-3 z-10">
-            Shop great deals on Macbook, iPad, iPhone and more.
+            Shop great deals on laptops, tablets, phones and more
           </p>
           <Link
             href={"/"}
