@@ -32,16 +32,16 @@ const Footer = () => {
             <div className="flex flex-col gap-4 text-gray-500 text-sm mt-8">
               <Link href={"/"}>Home</Link>
               {/* <Link href={"/"}>About</Link> */}
-              <Link href={"/"}>Contacts</Link>
-              <Link href={"/"}>Outlets</Link>
-              <Link href={"/"}>Support</Link>
+              <Link href={"/contacts"}>Contacts</Link>
+              <Link href={"/outlets"}>Outlets</Link>
+              <Link target="_blank" href={"https://wa.me/+2348173630234/"}>Support</Link>
             </div>
           </div>
           <div className="">
             <h1 className="text-lg font-bold whitespace-nowrap">Quick Links</h1>
             <div className="flex flex-col gap-4 text-gray-500 text-sm mt-8">
-              <Link href={"/"}>Account</Link>
-              <Link href={"/"}>Cart</Link>
+              <Link href={"/account"}>Account</Link>
+              <Link href={"/cart"}>Cart</Link>
               <Link href={"/"} className="whitespace-nowrap">
                 Delivery & Returns
               </Link>
