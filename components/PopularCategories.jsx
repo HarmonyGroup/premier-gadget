@@ -68,35 +68,35 @@ const PopularCategories = () => {
       image: Iphone,
       height: 500,
       width: 500,
-      url: "/",
+      url: "category/Smartphones",
     },
-    {
-      title: "Laptops",
-      image: Macbook,
-      height: 180,
-      width: 180,
-      url: "/",
-    },
+    // {
+    //   title: "Laptops",
+    //   image: Macbook,
+    //   height: 180,
+    //   width: 180,
+    //   url: "category/Laptops",
+    // },
     {
       title: "Tablets",
       image: Ipad,
       height: 120,
       width: 120,
-      url: "/",
+      url: "category/Tablets",
     },
     {
-      title: "Gaming",
+      title: "Laptops",
       image: Macbook,
       height: 150,
       width: 150,
-      url: "/",
+      url: "category/Laptops",
     },
     {
       title: "Gaming",
       image: Gaming,
       height: 100,
       width: 100,
-      url: "/",
+      url: "category/Gaming-and-Console",
     },
   ];
 
@@ -126,7 +126,7 @@ const PopularCategories = () => {
                 <p className="text-[19px] font-semibold text-center mt-6">
                   {category.title}
                 </p>
-                <p className="text-gray-400 text-center">250 products</p>
+                {/* <p className="text-gray-400 text-center">250 products</p> */}
               </Link>
             </CarouselItem>
           ))}

@@ -6,12 +6,22 @@ import { formatPrice } from "@/lib/utils";
 import { useContext } from "react";
 import toast from "react-hot-toast";
 import { HiStar } from "react-icons/hi2";
+import { CartContext } from "@/Context";
 
 const ProductCard = ({ product, link }) => {
   const imageUrl =
     product?.images && product?.images?.length > 0
       ? product.images[0]
       : "/assets/iphone-sample.png";
+
+  const { addToCart } = useContext(CartContext);
+
+  const handleCart = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    addToCart(product);
+    toast.success("Added to cart!");
+  };
 
   return (
     <div className="bg-white group w-full max-w-60 rounded-xl">
@@ -30,7 +40,10 @@ const ProductCard = ({ product, link }) => {
       </div>
       <div className="flex flex-col gap-5 p-3">
         <div>
-          <Link href={link} className="font-bold hover:underline underline-offset-1">
+          <Link
+            href={link}
+            className="font-bold hover:underline underline-offset-1"
+          >
             <span className="line-clamp-2">{product?.title}</span>
           </Link>
           <p className="text-sm text-gray-500 mt-2">{product?.brand}</p>
@@ -68,12 +81,13 @@ const ProductCard = ({ product, link }) => {
           </p>
         )}
 
-        <Link
-          href={"/"}
+        <button
+          disabled={product?.availability === "Out of Stock"}
+          onClick={handleCart}
           className="flex items-center justify-center bg-deepBlue text-white text-sm font-semibold p-2 rounded-lg"
         >
           Add To Cart
-        </Link>
+        </button>
       </div>
     </div>
   );

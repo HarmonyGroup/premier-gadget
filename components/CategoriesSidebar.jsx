@@ -14,7 +14,7 @@ const CategoriesSidebar = ({ categories, showCategories, setShowCategories }) =>
             </div>
             <div className="flex flex-col gap-8 mt-8 px-2">
                 {categories.map((category, index) => (
-                    <CategorySidebarItem key={index} category={category} />
+                    <CategorySidebarItem key={index} category={category} setShowCategories={setShowCategories} />
                 ))}
             </div>
           </div>

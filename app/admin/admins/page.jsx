@@ -57,7 +57,7 @@ const Page = () => {
       <div className="flex flex-col md:flex-row justify-between gap-3">
         <div>
           <h1 className="text-xl font-semibold">Admins</h1>
-          <p className="text-xs font-normal text-gray-500 mt-1">
+          <p className="text-sm font-normal text-gray-500 mt-1">
             Create and manage admins here.
           </p>
         </div>
@@ -75,7 +75,7 @@ const Page = () => {
           {admins?.length > 0 ? (
             <div className="overflow-x-auto">
               <Table className="mt-6 min-w-full">
-                <TableHeader className="bg-gray-100 hover:bg-gray-100 text-xs">
+                <TableHeader className="bg-gray-100 hover:bg-gray-100 text-sm">
                   <TableRow>
                     <TableHead className="whitespace-nowrap font-normal">
                       Admin Name
@@ -88,7 +88,7 @@ const Page = () => {
                     </TableHead>
                   </TableRow>
                 </TableHeader>
-                <TableBody className="text-xs">
+                <TableBody className="text-sm">
                   {admins?.length > 0 &&
                     admins.map((admin) => (
                       <TableRow key={admin._id}>
@@ -111,7 +111,7 @@ const Page = () => {
               <p className="bg-gray-100 text-gray-400 text-xl rounded-full p-3">
                 <CgTrashEmpty />
               </p>
-              <p className="text-xs text-gray-500 font-normal mt-4">
+              <p className="text-sm text-gray-500 font-normal mt-4">
                 No Admins available!
               </p>
             </div>

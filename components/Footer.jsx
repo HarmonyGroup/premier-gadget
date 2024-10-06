@@ -19,12 +19,12 @@ const Footer = () => {
           <div className="">
             <h1 className="text-lg font-bold">Categories</h1>
             <div className="flex flex-col gap-4 text-gray-500 text-sm mt-8">
-              <Link href={"/"}>Smartphones</Link>
-              <Link href={"/"}>Laptops</Link>
-              <Link href={"/"}>Tablets</Link>
-              <Link href={"/"}>Computing</Link>
-              <Link href={"/"}>Gaming</Link>
-              <Link href={"/"}>Accessories</Link>
+              <Link href={"category/Smartphones"}>Smartphones</Link>
+              <Link href={"category/Laptops"}>Laptops</Link>
+              <Link href={"category/Tablets"}>Tablets</Link>
+              <Link href={"category/Computing"}>Computing</Link>
+              <Link href={"category/Gaming-and-Console"}>Gaming</Link>
+              <Link href={"category/Accessories"}>Accessories</Link>
             </div>
           </div>
           <div className="">

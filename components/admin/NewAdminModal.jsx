@@ -20,8 +20,7 @@ import toast from "react-hot-toast";
 import { LoaderIcon } from "lucide-react";
 
 const formSchema = z.object({
-  firstName: z.string().min(3),
-  lastName: z.string().min(3),
+  fullName: z.string().min(3),
   phone: z.string().min(8),
   email: z.string().email(),
   password: z.string().min(8),
@@ -35,8 +34,7 @@ const NewAdminModal = ({ onAdminAdded }) => {
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      firstName: "",
-      lastName: "",
+      fullName: "",
       phone: "",
       email: "",
       password: "",
@@ -49,8 +47,7 @@ const NewAdminModal = ({ onAdminAdded }) => {
       const response = await fetch("/api/admins", {
         method: "POST",
         body: JSON.stringify({
-          firstName: values.firstName,
-          lastName: values.lastName,
+          fullName: values.fullName,
           phone: values.phone,
           email: values.email,
           password: values.password,
@@ -109,27 +106,11 @@ const NewAdminModal = ({ onAdminAdded }) => {
               >
                 <FormField
                   control={form.control}
-                  name="firstName"
+                  name="fullName"
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel className="text-sm text-gray-500 font-normal">
-                        First Name&nbsp;
-                      </FormLabel>
-                      <FormControl>
-                        <Input {...field} className="text-sm font-medium" />
-                      </FormControl>
-                      <FormMessage className="text-sm font-normal" />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="lastName"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-sm text-gray-500 font-normal">
-                        Last Name&nbsp;
+                        Full Name&nbsp;
                       </FormLabel>
                       <FormControl>
                         <Input {...field} className="text-sm font-medium" />

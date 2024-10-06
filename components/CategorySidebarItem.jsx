@@ -4,8 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { FiMinus, FiPlus } from "react-icons/fi";
 
-const CategorySidebarItem = ({ category }) => {
-  const [showCategories, setShowCategories] = useState(false);
+const CategorySidebarItem = ({ category, setShowCategories }) => {
+  const [showSubCategories, setShowSubCategories] = useState(false);
 
   const categoryName = encodeURIComponent(category.name.replace(/ /g, "-"));
   if (category.children.length > 0) {
@@ -13,19 +13,20 @@ const CategorySidebarItem = ({ category }) => {
       <div>
         <div className="flex items-center justify-between">
           <Link
+            onClick={() => setShowCategories(false)}
             href={`/category/${categoryName}`}
             className="text-sm md:text-[16px] font-medium outline-none"
           >
             {category.name}
           </Link>
           <button
-            onClick={() => setShowCategories(!showCategories)}
+            onClick={() => setShowSubCategories(!showSubCategories)}
             className="text-[15px] outline-none"
           >
-            {showCategories ? <FiMinus /> : <FiPlus />}
+            {showSubCategories ? <FiMinus /> : <FiPlus />}
           </button>
         </div>
-        {showCategories && (
+        {showSubCategories && (
           <div className="flex flex-col gap-8 mt-8">
             {category.children.map((child) => (
               <CategorySidebarItem key={child._id} category={child} />
@@ -37,6 +38,7 @@ const CategorySidebarItem = ({ category }) => {
   } else {
     return (
       <Link
+        onClick={() => setShowCategories(false)}
         href={`/category/${categoryName}`}
         key={category._id}
         className="text-sm md:text-[16px] font-medium outline-none"

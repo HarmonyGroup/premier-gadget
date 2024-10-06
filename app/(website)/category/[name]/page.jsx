@@ -235,7 +235,7 @@ const Page = () => {
           </div>
 
           <div className="grid grid-cols-4 gap-16 md:gap-10 pb-14 px-4 md:px-6">
-            <div className="col-span-1">
+            <div className="hidden lg:block col-span-1">
               <div className="bg-white rounded-lg p-4">
                 <div>
                   <Accordion className="my-2" type="single" collapsible>
@@ -393,9 +393,9 @@ const Page = () => {
                 </div>
               </div>
             </div>
-            <div className="col-span-3">
+            <div className="col-span-4 lg:col-span-3 relative pb-36 min-h-screen">
               <h1 className="text-2xl font-semibold">{category?.name}</h1>
-              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 md:gap-x-8 gap-y-8 md:gap-y-12 mt-12">
+              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 md:gap-x-8 gap-y-8 md:gap-y-12 mt-8">
                 {filteredAndSortedProducts.map((product) => (
                   <ProductCard
                     key={product?._id}
@@ -403,6 +403,24 @@ const Page = () => {
                     link={`/product/${product?._id}`}
                   />
                 ))}
+              </div>
+              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex justify-center mt-24">
+                <button
+                  className="bg-deepBlue text-white flex items-center gap-4 text-sm font-medium rounded-md px-6 py-3 mr-5 disabled:bg-deepBlue/60 disabled:cursor-not-allowed"
+                  disabled={currentPage === 1}
+                  onClick={() => handlePageChange(currentPage - 1)}
+                >
+                  <FaAnglesLeft />
+                  Previous
+                </button>
+                <button
+                  className="bg-deepBlue text-white flex items-center gap-4 text-sm font-medium rounded-md px-6 py-3 disabled:bg-deepBlue/60 disabled:cursor-not-allowed"
+                  disabled={currentPage === totalPages}
+                  onClick={() => handlePageChange(currentPage + 1)}
+                >
+                  Next
+                  <FaAnglesRight />
+                </button>
               </div>
             </div>
           </div>

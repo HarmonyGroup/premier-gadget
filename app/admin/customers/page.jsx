@@ -58,7 +58,7 @@ const Page = () => {
       <div className="flex flex-col md:flex-row justify-between gap-3">
         <div>
           <h1 className="text-xl font-semibold">Customers</h1>
-          <p className="text-xs font-normal text-gray-500 mt-1">
+          <p className="text-sm font-normal text-gray-500 mt-1">
             Manage customers account here.
           </p>
         </div>
@@ -79,7 +79,7 @@ const Page = () => {
                 <input
                   type="text"
                   placeholder="Search customer email here..."
-                  className="w-full bg-gray-100 text-xs border border-gray-200 rounded-lg outline-none pl-9 pr-5 py-3"
+                  className="w-full bg-gray-100 text-sm border border-gray-200 rounded-lg outline-none pl-9 pr-5 py-3"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
@@ -91,7 +91,7 @@ const Page = () => {
           {filteredCustomers?.length > 0 ? (
             <div className="overflow-x-auto">
               <Table className="mt-6 min-w-full">
-                <TableHeader className="bg-gray-100 hover:bg-gray-100 text-xs">
+                <TableHeader className="bg-gray-100 hover:bg-gray-100 text-sm">
                   <TableRow>
                     <TableHead className="whitespace-nowrap font-normal">
                       Customer Name
@@ -104,12 +104,12 @@ const Page = () => {
                     </TableHead>
                   </TableRow>
                 </TableHeader>
-                <TableBody className="text-xs">
+                <TableBody className="text-sm">
                   {filteredCustomers?.length > 0 &&
                     filteredCustomers.map((customer) => (
                       <TableRow key={customer._id}>
                         <TableCell className="flex items-start gap-1 font-medium max-w-[300px] truncate">
-                          {customer.firstName} {customer.lastName}
+                          {customer.fullName}
                         </TableCell>
                         <TableCell className="text-center whitespace-nowrap px-14">
                           {customer.email}
@@ -127,7 +127,7 @@ const Page = () => {
               <p className="bg-gray-100 text-gray-400 text-xl rounded-full p-3">
                 <CgTrashEmpty />
               </p>
-              <p className="text-xs text-gray-500 font-normal mt-4">
+              <p className="text-sm text-gray-500 font-normal mt-4">
                 No customers available!
               </p>
             </div>
