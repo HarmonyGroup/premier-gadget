@@ -63,7 +63,7 @@ const Header = () => {
               <p className="text-sm font-medium whitespace-nowrap">
                 24/7 Support
               </p>
-              <p className="text-sm text-deepBlue">08173630234</p>
+              <p className="text-sm text-deepBlue">08182012345</p>
             </div>
           </div>
           <div className="flex items-center gap-3">

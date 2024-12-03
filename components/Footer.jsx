@@ -34,7 +34,7 @@ const Footer = () => {
               {/* <Link href={"/"}>About</Link> */}
               <Link href={"/contacts"}>Contacts</Link>
               <Link href={"/outlets"}>Outlets</Link>
-              <Link target="_blank" href={"https://wa.me/+2348173630234/"}>Support</Link>
+              <Link target="_blank" href={"https://wa.me/+2348182012345/"}>Support</Link>
             </div>
           </div>
           <div className="">
