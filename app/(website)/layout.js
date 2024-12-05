@@ -6,6 +6,9 @@ import { AppProvider } from "@/Context";
 import ToasterProvider from "@/utils/ToasterProvider";
 import Footer from "@/components/Footer";
 import MobileNav from "@/components/MobileNav";
+import Link from "next/link";
+import Image from "next/image";
+import WhatsappIcon from "@/assets/whatsapp-icon.png";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -30,7 +33,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${syne.className} mb-[77px] lg:mb-0 antialiased`}>
+      <body className={`${syne.className} mb-[77px] lg:mb-0 antialiased relative`}>
         <AppProvider>
           <ToasterProvider />
           <Header />
@@ -39,6 +42,10 @@ export default function RootLayout({ children }) {
           <Footer />
           <MobileNav />
         </AppProvider>
+        <Link target="_blank" href={"https://wa.me/+2348182012345/"} className="fixed bottom-8 right-4 z-50">
+          <Image src={WhatsappIcon} width={60} height={60} alt="icon" />
+          <span className="absolute -top-1 right-0 bg-red-600 text-white text-xs font-bold rounded-full px-2 py-1">1</span>
+        </Link>
       </body>
     </html>
   );
