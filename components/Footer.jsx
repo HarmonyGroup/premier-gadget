@@ -59,7 +59,7 @@ const Footer = () => {
       <div className="flex flex-col lg:flex-row gap-4 items-center justify-between py-6">
         <p className="text-gray-500 text-sm">
           <span className="text-black font-semibold">Premier Gadgets NG</span>{" "}
-          Copyright © 2024
+          Copyright © 2025
         </p>
         <Image src={Payments} className="scale-75" alt="Payment options" />
       </div>
